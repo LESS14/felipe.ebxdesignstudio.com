@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="8;url=https://felipe.ebxdesigndesign.com">
+  <meta http-equiv="refresh" content="3;url=https://felipe.ebxdesignstudio.com">
   <meta charset="UTF-8">
   <title>Redirecting...</title>
-  
   <style>
-  .blink {
-  animation: blink-animation 1s step-end infinite;
-}
+    .blink {
+      opacity: 0;
+      animation: blink-animation 1s infinite;
+    }
 
-@keyframes blink-animation {
-  50% {
-    opacity: 0;
-  }
-}
+   h1 {
+    text-align: center;
+   }
+
+    @keyframes blink-animation {
+      0%, 50% {
+        opacity: 0;
+      }
+      51%, 100% {
+        opacity: 1;
+      }
+    }
   </style>
-  
-  <script>
-  const dots = document.getElementById("dots");
-
-setInterval(() => {
-  dots.classList.toggle("blink");
-}, 1000);
-
-  </script>
 </head>
 <body>
-  <h1>Redirecting to felipe.ebxdesignstudio.com <span class="dots">...</span></h1>
+  <h1>Redirecting to felipe.ebxdesignstudio.com <span id="dots">...</span></h1>
+
+  <script>
+    const dots = document.getElementById("dots");
+    let dotIndex = 0;
+
+    function blinkDot() {
+      dots.innerHTML = ".".repeat(dotIndex + 1);
+
+      if (dotIndex === 2) {
+        dotIndex = 0;
+      } else {
+        dotIndex++;
+      }
+
+      setTimeout(blinkDot, 500);
+    }
+
+    blinkDot();
+  </script>
 </body>
 </html>
