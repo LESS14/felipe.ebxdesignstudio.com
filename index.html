@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="8;url=https://felipe.ebxdesign.com">
+  
+  <style>
+  .blink {
+  animation: blink-animation 1s step-end infinite;
+}
 
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
+}
+  </style>
+  
+  <script>
+  const dots = document.getElementById("dots");
+
+setInterval(() => {
+  dots.classList.toggle("blink");
+}, 1000);
+
+  </script>
+</head>
+<body>
+  <h1>Redirect to felipe.ebxdesignstudio.com <span class="dots">...</span></h1>
+</body>
+</html>
